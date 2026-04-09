@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Nurul - Kuih Homemade</title>
+  <style>
+    body { font-family: Arial; margin:0; background:#fff8f0; }
+    header { text-align:center; padding:20px; background:#7c5c2e; color:white; }
+    h1 { margin:0; }
+    .container { padding:20px; }
+    .products { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+    .card { background:white; padding:15px; border-radius:10px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);} 
+    img { width:100%; border-radius:10px; }
+    .price { font-weight:bold; margin-top:5px; }
+    .form { max-width:400px; margin:30px auto; background:white; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);} 
+    input, select { width:100%; padding:10px; margin-top:5px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc; }
+    button { width:100%; padding:12px; background:#7c5c2e; color:white; border:none; border-radius:8px; cursor:pointer; }
+    button:hover { background:#5a431f; }
+    .note { text-align:center; color:#a94442; margin-top:10px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>4 Nurul</h1>
+  <p>Homemade Tradisional • Premium Taste</p>
+</header>
+
+<div class="container">
+  <div class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604908176997-4315b9b0c8d3">
+      <h3>Kueh Mazola</h3>
+      <p>Rangup & lembut, fresh setiap hari</p>
+      <p class="price">RM25 / balang</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1599785209707-28a7c5c74f4b">
+      <h3>Kueh Loyang</h3>
+      <p>Tradisional rangup & wangi</p>
+      <p class="price">RM20 / bekas</p>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:20px;">Fresh homemade setiap hari • Limited batch 🍪</p>
+  <p class="note">Order ditutup bila slot penuh</p>
+
+  <div class="form">
+    <h3 style="text-align:center;">Borang Tempahan</h3>
+
+    <input id="nama" placeholder="Nama">
+    <input id="phone" placeholder="No Telefon">
+    <input id="pesanan" placeholder="Contoh: Mazola 2, Loyang 1">
+
+    <select id="method">
+      <option>COD</option>
+      <option>Pickup</option>
+    </select>
+
+    <input type="date" id="tarikh">
+
+    <button onclick="hantar()">Hantar Tempahan</button>
+  </div>
+</div>
+
+<script>
+function hantar(){
+  var nama = document.getElementById('nama').value;
+  var phone = document.getElementById('phone').value;
+  var pesanan = document.getElementById('pesanan').value;
+  var method = document.getElementById('method').value;
+  var tarikh = document.getElementById('tarikh').value;
+
+  var msg = `Tempahan 4 Nurul%0A%0ANama: ${nama}%0ANo Phone: ${phone}%0APesanan: ${pesanan}%0APilihan: ${method}%0ATarikh: ${tarikh}`;
+
+  window.open(`https://wa.me/60123456789?text=${msg}`);
+}
+</script>
+
+</body>
+</html>
